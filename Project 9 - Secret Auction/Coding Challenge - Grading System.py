@@ -25,4 +25,3 @@ for student in student_scores:
 # 🚨 Don't change the code below 👇
 print("These are the student scores", student_scores)
 print(student_grades)
-
