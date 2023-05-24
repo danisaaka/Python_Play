@@ -1,0 +1,45 @@
+Start
+|
+|---> Display "What would you like? (espresso/latte/cappuccino)"
+|       |
+|       |--- 'off' selected?
+|       |       |
+|       |       |--- Yes --> Display "Machine turned off." and Exit
+|       |       |
+|       |       |--- No
+|       |
+|       |--- 'report' selected?
+|       |       |
+|       |       |--- Yes --> Display resource report and Continue
+|       |       |
+|       |       |--- No
+|       |
+|       |--- Invalid input?
+|       |       |
+|       |       |--- Yes --> Display error message and Continue
+|       |       |
+|       |       |--- No
+|       |
+|       |--- Get coffee details and ingredients
+|       |
+|       |--- Are there enough resources?
+|       |       |
+|       |       |--- Yes
+|       |       |       |
+|       |       |       |--- Get coin inputs
+|       |       |       |
+|       |       |       |--- Is payment sufficient?
+|       |       |               |
+|       |       |               |--- Yes
+|       |       |               |       |
+|       |       |               |       |--- Deduct resources and provide coffee
+|       |       |               |       |
+|       |       |               |       |--- Is there change?
+|       |       |               |               |
+|       |       |               |               |--- Yes --> Deduct change from machine's money and provide change
+|       |       |               |               |
+|       |       |               |               |--- No --> Provide coffee without change
+|       |       |
+|       |       |--- No --> Display resource shortage message
+|
+End
