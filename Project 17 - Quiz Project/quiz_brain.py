@@ -10,7 +10,17 @@ class QuizBrain:
     def next_question(self):
         current_question = self.question_list[self.question_number]
         self.question_number += 1
-        user_answer = input(f"Q.{self.question_number}: {current_question.text}\n(True/False)\n")
+
+        while True:
+            try:
+                user_answer = input(f"Q.{self.question_number}: {current_question.text}\n(True/False)\n").lower()
+
+                if user_answer != 'true' and user_answer != 'false':
+                    raise ValueError
+                break
+            except ValueError:
+                print("Please enter either 'True' or 'False'.")
+
         self.check_answer(user_answer, current_question.answer)
 
     def check_answer(self, user_answer, correct_answer):

@@ -1,29 +1,39 @@
-from turtle import Turtle, Screen
+import turtle
+import random
 
-# Create a Turtle object
-turtle = Turtle()
+from Turtles import screen, timmy
 
-# Set the pen color and thickness
-turtle.pencolor("black")
-turtle.pensize(2)
+turtle.colormode(255)
 
-# Set the pen to draw in dotted style
-turtle.pen(pendown=False, pencolor="black", pensize=2)
 
-# Move the turtle to the starting position
-turtle.penup()
-turtle.goto(-100, -100)
-turtle.pendown()
+def random_colour():
+    red = random.randint(0, 255)
+    green = random.randint(0, 255)
+    blue = random.randint(0, 255)
+    colour = (red, green, blue)
+    return colour
 
-# Draw the dotted square
-for _ in range(50):
-    turtle.forward(50)
-    turtle.penup()
-    turtle.forward(50)
-    turtle.pendown()
-    turtle.right(90)
 
-# Create a Screen object to keep the turtle graphics window open
-screen = Screen()
-screen.mainloop()
-turtle.done()
+def draw_spirograph(turtle_object, size_of_gap, radius):
+    """ Draws a spirograph
+    :param turtle_object: turtle object
+    :param size_of_gap: The size of the gap between the circles
+    :param radius: The radius of the circles
+    :return: None
+    """
+    for _ in range(int(360 / size_of_gap)):
+        turtle_object.color(random_colour())
+        turtle_object.circle(radius)
+        turtle_object.setheading(timmy.heading() + size_of_gap)
+
+
+print("You are about to draw a spirograph.")
+bigger_circle = int(input("Key in the radius of the bigger circle.\n"))
+bigger_gap = int(input("Key in the gap of the bigger circle.\n"))
+smaller_circle = int(input("Key in the radius of the smaller circle.\n"))
+smaller_gap = int(input("Key in the gap of the smaller circle.\n"))
+
+draw_spirograph(timmy, bigger_gap, bigger_circle)
+draw_spirograph(timmy, smaller_gap, smaller_circle)
+
+screen.exitonclick()

@@ -8,7 +8,7 @@ colours = ["CornflowerBlue", "DarkOrchid", "IndianRed", "DeepSkyBlue", "LightSea
 # Initialize the screen
 screen = Screen()
 screen.setup(width=750, height=600)
-screen.bgcolor("black")
+screen.bgcolor("white")
 
 # Initialize the first turtle (Timmy)
 timmy = Turtle()
