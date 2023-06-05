@@ -3,7 +3,7 @@ from turtle import Turtle, Screen
 # Initialize the screen
 screen = Screen()
 screen.setup(width=750, height=600)
-screen.bgcolor("white")
+screen.bgcolor("black")
 # Initialize the first turtle (Timmy)
 timmy = Turtle()
 timmy.shape("turtle")
