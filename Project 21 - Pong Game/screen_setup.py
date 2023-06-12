@@ -1,8 +1,11 @@
 from turtle import Screen
 
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 600
+
 screen = Screen()
-screen.setup(width=800, height=600)
+screen.setup(SCREEN_WIDTH, SCREEN_HEIGHT)
 screen.bgcolor("black")
-screen.title("Classic Pong Game")
+screen.title("Pong")
 screen.tracer(0)
 
